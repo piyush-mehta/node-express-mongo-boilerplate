@@ -1,7 +1,6 @@
 var update = document.getElementById('update');
 
 update.addEventListener('click', function(){
-    console.log('update button clicked');
     fetch('quotes', {
         method: 'put',
         headers: {'Content-Type': 'application/json'},

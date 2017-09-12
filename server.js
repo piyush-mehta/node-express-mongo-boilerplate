@@ -1,5 +1,3 @@
-console.log('its working');
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
@@ -55,13 +53,11 @@ app.get('/', (req, res) => {
 });
 
 app.post('/quotes', (req, res) => {
-    console.log('got form parameters as ' + JSON.stringify(req.body)); 
     db.collection('quotes').save(req.body, (err, result) => {
         if(err) {
             return console.log(err);
         }
         else {
-            console.log('request form data successfully saved in collection database');
             res.redirect('/');
         }
     });
@@ -69,7 +65,6 @@ app.post('/quotes', (req, res) => {
 
 
 app.put('/quotes', (req, res) => {
-    console.log('PUT request received');
     db.collection('quotes')
     .findOneAndUpdate({firstname: 'Piyush'}, {
       $set: {
