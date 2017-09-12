@@ -1,0 +1,21 @@
+{
+  "name": "node-express-mongodb-boilerplate",
+  "version": "0.0.1",
+  "description": "Demo application for beginners for express and mongodb application",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Piyush Mehta",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.0",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "mongodb": "^2.2.31"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.0"
+  }
+}
