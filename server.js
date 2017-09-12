@@ -4,7 +4,7 @@ const MongoClient = require('mongodb').MongoClient;
 
 var db;
 
-MongoClient.connect('<mongodburl>', (err, database) => {
+MongoClient.connect('mongodb://admin:admin@ds133004.mlab.com:33004/star-wars-quotes', (err, database) => {
     // .... start the server only if database get connected
     if(err) {
         return console.log(err);
