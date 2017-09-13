@@ -12,7 +12,7 @@ MongoClient.connect('mongodb://admin:admin@ds133004.mlab.com:33004/star-wars-quo
     else {
         db = database;
         // start listening to requests on port: 3000
-        app.listen(3000, () => {
+        app.listen(app.get('port'), () => {
             console.log('listening on port 3000');
         });
     }
@@ -24,6 +24,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
+app.set('port', (process.env.PORT || 3000));
 
 
 
