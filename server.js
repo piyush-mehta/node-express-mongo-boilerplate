@@ -1,10 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
+const connectionString = process.env.MONGOCONNECTIONSTRING;
 
 var db;
 
-MongoClient.connect('mongodb://admin:admin@ds133004.mlab.com:33004/star-wars-quotes', (err, database) => {
+MongoClient.connect(connectionString, (err, database) => {
     // .... start the server only if database get connected
     if(err) {
         return console.log(err);
